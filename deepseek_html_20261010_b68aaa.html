@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Історія XVI-XVII ст. | Творчий проект</title>
+    <style>
+        :root {
+            --primary-color: #4a2c2a; /* Цвет старой бумаги/дерева */
+            --accent-color: #c49a6c; /* Золотистый/пергамент */
+            --bg-color: #f4f1ea;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 1rem;
+        }
+
+        /* Стили для карточек проектов */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .project-card .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Скрытый контент, который появляется при клике */
+        .project-details {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #ccc;
+            font-size: 0.95rem;
+        }
+
+        .project-card.active .project-details {
+            display: block;
+        }
+
+        .btn-toggle {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-toggle:hover {
+            background-color: #a87e55;
+        }
+
+        /* Блок с датами */
+        .dates-section {
+            background-color: #fff;
+            border-left: 5px solid var(--primary-color);
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .dates-section h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .highlight {
+            background-color: #fceecf;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Анимация появления */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Мандрівка в минуле</h1>
+        <p>Історія України та Західної Європи XVI–XVII ст.</p>
+    </header>
+
+    <div class="container">
+        <p class="intro-text">
+            <strong>Творче завдання (на вибір):</strong> Обери один із проєктів нижче, щоб дослідити життя людей тієї епохи.
+        </p>
+
+        <!-- Сетка с проектами -->
+        <div class="projects-grid">
+            
+            <!-- Проект 1: Реклама мануфактури -->
+            <div class="project-card" onclick="toggleProject(this)">
+                <div class="icon">🏭</div>
+                <h3>Ілюстрована реклама мануфактури</h3>
+                <p>Створи рекламний плакат для майстерні з виготовлення одягу, меблів або хатнього начиння.</p>
+                <button class="btn-toggle">Дізнатися більше</button>
+                <div class="project-details fade-in">
+                    <p><strong>Як виконати:</strong></p>
+                    <ul>
+                        <li>Обери товар (наприклад, сукняне пальто або дубовий стіл).</li>
+                        <li>Намалюй яскравий плакат (можна використати Canva або папір).</li>
+                        <li>Придумай слоган епохи Відродження (наприклад, "Якість, перевірена часом!").</li>
+                        <li>Вкажи переваги товару перед імпортними аналогами.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Проект 2: Один день з життя -->
+            <div class="project-card" onclick="toggleProject(this)">
+                <div class="icon">📜</div>
+                <h3>Репортаж: Один день із життя</h3>
+                <p>Опиши один день представника буржуазії або найманого працівника.</p>
+                <button class="btn-toggle">Дізнатися більше</button>
+                <div class="project-details fade-in">
+                    <p><strong>Як виконати:</strong></p>
+                    <ul>
+                        <li>Обери роль: багатий купець чи бідний ткач.</li>
+                        <li>Опиши розпорядок дня: від сніданку до сну.</li>
+                        <li>Зверни увагу на деталі: що їли, як одягалися, про що говорили.</li>
+                        <li>Формат: коротке есе або відео-розповідь.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Проект 3: Віртуальна екскурсія -->
+            <div class="project-card" onclick="toggleProject(this)">
+                <div class="icon">🏠</div>
+                <h3>Віртуальна екскурсія будинком</h3>
+                <p>Проведи екскурсію будинком міського жителя XVI-XVII століття.</p>
+                <button class="btn-toggle">Дізнатися більше</button>
+                <div class="project-details fade-in">
+                    <p><strong>Як виконати:</strong></p>
+                    <ul>
+                        <li>Намалюй план будинку або зроби 3D-модель.</li>
+                        <li>Розкажи про кожну кімнату: кухню, спальню, вітальню.</li>
+                        <li>Опиши меблі та предмети побуту (скриня, піч, ліжко).</li>
+                        <li>Порівняй з сучасним житлом.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Блок с датами -->
+        <div class="dates-section">
+            <h2>📅 Ці дати допоможуть вам зрозуміти історію</h2>
+            <p><strong>Запам'ятайте їх:</strong></p>
+            <ul>
+                <li><span class="highlight">XVI–XVII ст.</span> — Початок формування індустріального суспільства й перехід до капіталістичних відносин у Західній Європі.</li>
+            </ul>
+            <p><em>Саме в цей час з'являються мануфактури, зростає роль міст та формується новий клас — буржуазія.</em></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Створено для виконання творчого проекту з історії. © 2026</p>
+    </footer>
+
+    <script>
+        // Функция для раскрытия карточек
+        function toggleProject(element) {
+            // Закрываем все остальные карточки
+            const allCards = document.querySelectorAll('.project-card');
+            allCards.forEach(card => {
+                if (card !== element) {
+                    card.classList.remove('active');
+                    const btn = card.querySelector('.btn-toggle');
+                    if(btn) btn.textContent = 'Дізнатися більше';
+                }
+            });
+
+            // Переключаем текущую
+            element.classList.toggle('active');
+            
+            // Меняем текст кнопки
+            const btn = element.querySelector('.btn-toggle');
+            if (element.classList.contains('active')) {
+                btn.textContent = 'Згорнути';
+            } else {
+                btn.textContent = 'Дізнатися більше';
+            }
+        }
+    </script>
+</body>
+</html>
